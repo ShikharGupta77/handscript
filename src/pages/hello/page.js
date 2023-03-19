@@ -2,12 +2,11 @@ import "./page.css"
 import { ArrowForwardIcon } from '@chakra-ui/icons'
 import Fade from 'react-reveal/Fade';
 import Zoom from 'react-reveal/Zoom';
-import { useState, useEffect} from 'react';
-
+import { useState, useEffect } from 'react';
 
 function Hello () {
-    const [offsetsTop, setOffsetsTop] = useState([false, false, false, false, false]);
-    const showThreshold = 0.15;
+    const [offsetsTop, setOffsetsTop] = useState([false, false, false, false, false, false]);
+    const showThreshold = 0.8;
 
     useEffect(() => {
         const handleScroll = () => {
@@ -21,22 +20,26 @@ function Hello () {
     }, [offsetsTop]);
 
 
-    return (<>
+    return (
     <div className="hello-container">
-        <h1>
+        <h1 style={{marginBottom: "80px"}}>
             <span className="highlight">Hello,</span><br/>
             from a <span className="color">silent</span> world.
         </h1>
-        <form action="/translate">
-            <button className="hello__button">Try it out</button>
-        </form>
 
-        <div className="arrow bounce" style={{ opacity: offsetsTop[1] ? "0%" : "100%", transition: "opacity 0.3s" }}></div>
+        <a href="/translate" className="hello__button" style={{marginBottom: "35%", textDecoration: "none"}}>Try it out</a>
+        {/* <form action="/translate">
+            <button className="hello__button">Try it out</button>
+        </form> */}
+
+        <div className="arrow bounce" style={{ opacity: offsetsTop[2] ? "0%" : "100%", transition: "opacity 0.3s", position: "absolute", bottom: "5%" }}>
+            {/* <ArrowForwardIcon color="white"/> */}
+        </div>
 
         <Zoom when={offsetsTop[1]} duration={500}>
             <h1>
                 <span className="highlight color">70 million+</span><br/>
-                people are deaf in the world
+                people are deaf in the United States
             </h1>
         </Zoom>
 
@@ -59,13 +62,20 @@ function Hello () {
             </h1>
         </Zoom>
         
+        <Zoom when={offsetsTop[5]} duration={500}>
+            <h1>
+                <span className="highlight color">Introducing HandScript</span><br/>
+                A web app to convert ASL to text
+            </h1>
+        </Zoom>
+        
+        <div >
+            <div className="wave"></div>
+            <div className="wave"></div>
+            <div className="wave"></div>
+        </div>
     </div>
-
-
-    <div className="wave"></div>
-    <div className="wave"></div>
-    <div className="wave"></div>
-    </>);
+    );
 }
 
 export default Hello;

@@ -4,7 +4,6 @@ import { BrowserRouter, Link } from "react-router-dom";
 import AppRoutes from './AppRoutes';
 import logo from "./assets/logo.png"
 
-
 function App() {
   return (
     <BrowserRouter>
@@ -24,6 +23,7 @@ function App() {
             <div><Link to="/about">About</Link></div>
             <div><Link to="/learn">Learn</Link></div>
             <div><Link to="/translate">Translate</Link></div>
+            <div><Link to="/development">Development</Link></div>
           </div>
         </div>
 
