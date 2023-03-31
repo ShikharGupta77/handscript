@@ -1,0 +1,145 @@
+.main__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    margin-bottom: 4em;
+}
+
+.header {
+    color: #8655ff;
+    font-size: 4rem;
+    text-shadow: 1.5px 1.5px 1px rgba(255, 255, 255, 0.5);
+    margin: 0;
+}
+
+.connecting {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 2em;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(359deg);
+    }
+}
+
+.spinner-box {
+    display: flex;
+    align-items: center;
+    margin: 0em 0.7em;
+}
+
+.three-quarter-spinner {
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 3px solid #8655ff;
+    border-top: 3px solid transparent;
+    border-radius: 50%;
+    animation: spin 0.5s ease-in-out 0s infinite;
+}
+
+.vidAndStats {
+    display: flex;
+    flex-direction: row;
+}
+
+.webcam {
+    opacity: 0%;
+    position: absolute;
+}
+
+.videoFeed {
+    border-radius: 10px;
+    width: 50vw;
+    height: auto;
+}
+
+.stats {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 10px;
+    width: 18vw;
+    margin: 0 2em;
+}
+
+.stats > .predLetter {
+    font-size: 9rem;
+    margin: 0.2em 0em 0em 0em;
+}
+
+.graphs > .elements {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-evenly;
+    font-size: 1.25rem;
+    padding: 0;
+}
+
+.bars {
+    height: 15em;
+    margin: 3em 0em 0em 0em;
+    transform: rotateX(180deg);
+}
+
+button {
+    position: relative;
+    size: 2rem 10rem;
+    background-color: rgba(134, 85, 255, 0.8);
+    color: whitesmoke;
+    border: 0;
+    border-radius: 10px;
+    font-size: 1.8rem;
+    padding: 1rem;
+    font-weight: 500;
+    font-family: -apple-system, BlinkMacSystemFont;
+    transition: 0.5s;
+    margin: 2em auto 0em auto;
+}
+
+button:hover {
+    cursor: pointer;
+    transform: scale(1.15);
+}
+
+.letterImages {
+    display: grid;
+    margin-top: 10em;
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: repeat(5, 1fr);
+    margin: 5em auto;
+    gap: 2em;
+}
+
+.letterImages > :last-child {
+    justify-self: center;
+    align-self: center;
+    grid-column: 3;
+}
+
+.letterImages img {
+    height: 10em;
+    border-radius: 10px;
+    width: auto;
+    transition: 0.5s;
+}
+
+.letterImages img:hover {
+    height: 10em;
+    border-radius: 10px;
+    width: auto;
+    transform: scale(1.1);
+}
+
+.letterImages p {
+    font-size: 1rem;
+}
