@@ -15,7 +15,7 @@ function App() {
     const [showLetters, setShowLetters] = useState(false);
     const webcam = useRef("null");
 
-    const ENDPOINT = "http://3.101.42.87:5000";
+    const ENDPOINT = "http://13.57.209.231:5000"; // if you're seeing this please don't mess with this :)
     const pngHeader = "data:image/png;base64,";
 
     const imageUrls = [];
@@ -72,8 +72,8 @@ function App() {
                     <h1 className="header">Try it out!</h1>
                     <p>
                         Note: Since this is deployed on the AWS free tier,
-                        you'll have to wait ~10 seconds between frames. Anything
-                        faster crashes :(
+                        you'll have to wait ~20-30 seconds between frames.
+                        Anything faster crashes :(
                     </p>
                 </div>
                 <div className="vidAndStats">
