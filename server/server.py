@@ -24,7 +24,7 @@ def frameSend(img_data):
 
     # change
     new_image, predictions, confidences = processImage(image)
-    
+
     # encode
     buff = BytesIO()
     new_image.save(buff, format="png")
@@ -32,4 +32,4 @@ def frameSend(img_data):
     emit('frameReceive', {"image": encoded, "predictions": predictions, "confidences": confidences})
 
 if __name__ == '__main__':
-    socketio.run(app)
+    socketio.run(app, host='0.0.0.0') # allow connections from anywhere. bad practice but... who's seeing this :D
